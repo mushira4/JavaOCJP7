@@ -1,10 +1,10 @@
 package br.com.ocjp7.io.reader;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
 import br.com.ocjp7.io.Book;
+import br.com.ocjp7.io.exceptions.BookInexistentException;
 
 public class BookReader {
 
@@ -20,7 +20,7 @@ public class BookReader {
 		if (book.bookFileExists()) {
 			return readerStrategy.readBook(book);
 		} else {
-			throw new FileNotFoundException("Not found author: " + author + "with the book: " + name);
+			throw new BookInexistentException(book);
 		}
 	}
 }
