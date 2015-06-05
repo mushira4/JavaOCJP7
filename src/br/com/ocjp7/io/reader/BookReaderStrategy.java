@@ -6,7 +6,7 @@ import java.net.URISyntaxException;
 import br.com.ocjp7.io.Book;
 
 public interface BookReaderStrategy {
-	
-	public Book readBook( String author, String name ) throws URISyntaxException, IOException;
+
+	public Book readBook(Book book) throws URISyntaxException, IOException;
 
 }

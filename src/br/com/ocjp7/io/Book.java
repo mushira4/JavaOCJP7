@@ -13,9 +13,12 @@ public class Book {
 	private String author;
 
 	private String content = "";
-	
+
 	public Book(String name, String author) {
-		super();
+		if ( name == null || author == null ){
+			throw new IllegalArgumentException("Missing arguments");
+		}
+		
 		this.name = name;
 		this.author = author;
 	}

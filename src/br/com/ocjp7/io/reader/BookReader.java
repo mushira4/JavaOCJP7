@@ -1,5 +1,6 @@
 package br.com.ocjp7.io.reader;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
@@ -14,7 +15,12 @@ public class BookReader {
 	}
 
 	public Book readBook(String author, String name) throws URISyntaxException, IOException {
-		Book readBook = readerStrategy.readBook(author, name);
-		return readBook;
+		Book book = new Book(name, author);
+
+		if (book.bookFileExists()) {
+			return readerStrategy.readBook(book);
+		} else {
+			throw new FileNotFoundException("Not found author: " + author + "with the book: " + name);
+		}
 	}
 }
