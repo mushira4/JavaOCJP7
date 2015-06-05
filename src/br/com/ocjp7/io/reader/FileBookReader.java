@@ -8,7 +8,7 @@ import java.net.URISyntaxException;
 
 import br.com.ocjp7.io.Book;
 
-public class FileReaderBookReader implements BookReaderStrategy {
+public class FileBookReader implements BookReaderStrategy {
 
 	@Override
 	public Book readBook(Book book) throws URISyntaxException, IOException {

@@ -9,7 +9,7 @@ import java.net.URISyntaxException;
 
 import br.com.ocjp7.io.Book;
 
-public class BufferedReaderBookReader implements BookReaderStrategy {
+public class BufferedBookReader implements BookReaderStrategy {
 
 	@Override
 	public Book readBook(Book book) throws URISyntaxException, IOException {
